@@ -1,0 +1,19 @@
+group 'fi.linuxbox.cdi.se'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // CDI 1.2 (JSR-346?): javax.enterprise.{context{,.spi},event,inject{,.spi},util)
+    compile 'javax.enterprise:cdi-api:1.2'
+    // "AtInject"; also a dependency of above, but we're using it directly
+    compile 'javax.inject:javax.inject:1'
+
+    compileOnly 'org.slf4j:slf4j-api:1.7.21'
+}

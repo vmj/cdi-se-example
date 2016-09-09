@@ -1,0 +1,26 @@
+group 'fi.linuxbox.cdi.se'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'fi.linuxbox.cdi.se.app.owb.Boot'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':bean-archive')
+
+    compile 'org.apache.openwebbeans:openwebbeans-spi:1.7.0'
+    compile 'org.apache.openwebbeans:openwebbeans-impl:1.7.0'
+
+    // OpenWebBeans is pretty fast to start, at least in this app, but even faster with a
+    // optimized META-INF/openwebbeans/openwebbeans.properties.
+
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    runtime 'ch.qos.logback:logback-classic:1.1.7'
+}

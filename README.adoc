@@ -1,0 +1,29 @@
+# Example Java SE + CDI 1.2 applications
+
+This repository contains one application based on *OpenWebBeans*, and another based on *Weld SE*.
+
+This is using *gradle* build system, but you do not need to install that in order to build this.
+All you need is *Java SE JDK*, version 7 or newer.
+Both Oracle and OpenJDK should work.
+
+Clone this repository:
+
+  git clone https://github.com/vmj/cdi-se-example.git
+  cd cdi-se-example
+
+After cloning this repository, build the apps as follows:
+
+  ./gradlew installDist # or, if on Windows, use the gradlew.bat batch file instead
+
+Don't worry, that will not install anything outside the source directory.
+The apps are installed into `{owb,weld}-app/build/install/{owb,weld}-app` directory.
+
+Now you can run the apps like this:
+
+  owb-app/build/install/owb-app/bin/owb-app
+  weld-app/build/install/weld-app/bin/weld-app
+
+You can clean up, too
+
+  ./gradlew clean
+

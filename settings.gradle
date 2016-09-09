@@ -1,0 +1,5 @@
+rootProject.name = 'cdi-se-example'
+
+include 'bean-archive'
+include 'owb-app'
+include 'weld-app'
