@@ -5,10 +5,10 @@ import org.apache.webbeans.config.*;
 import org.apache.webbeans.spi.*;
 
 /**
- * A simple boot process for a OpenWebBeans based Java SE app.
+ * A simple boot process for OpenWebBeans based Java SE app.
  * <p>
- *     OpenWebBeans is configured with a properties file in <code>META-INF/openwebbeans</code> directory, so there's
- *     not much needed in the main method.
+ *     OpenWebBeans is configured with a properties file in <code>META-INF/openwebbeans</code> directory, which is
+ *     optional, so there's not much needed in the main method.
  * </p>
  */
 public class Boot {

@@ -13,8 +13,9 @@ import org.jboss.weld.environment.se.events.*;
  *     There's two ways to boot a Weld app:
  * </p>
  * <ul>
- *     <li>via <code>StartMain.main()</code> method that is provided by Weld SE and listening for Weld specific
- *         <code>ContainerInitialized</code> CDI event (and making sure that the event listener is in a bean archive)</li>
+ *     <li>via <code>StartMain.main()</code> method that is provided by Weld SE and then listening for Weld specific
+ *         <code>ContainerInitialized</code> CDI event (and making sure that the event listener is in an
+ *         explicit bean archive)</li>
  *     <li>or by instantiating Weld container manually in our own main function</li>
  * </ul>
  * <p>
@@ -27,15 +28,15 @@ public class Boot {
     private static boolean customMainUsed = false;
 
     /**
-     * In order to use the <code>StartMain.main()</code> and booting via the <code>ContainerInitiazed</code> event,
+     * In order to use the <code>StartMain.main()</code> and booting via the <code>ContainerInitialized</code> event,
      * make sure the <code>build.gradle</code> has the following <code>mainClassName</code> setting enabled:
      *
      *     mainClassName = 'org.jboss.weld.environment.se.StartMain'
      *
-     * This JAR also contains the <code>beans.xml</code> file in the resource, and is thus considered a bean archive by
+     * This JAR also contains the <code>beans.xml</code> file in the resources, and is thus considered a bean archive by
      * Weld.
      */
-    public void boot(@Observes ContainerInitialized event, BeanManager bm) {
+    public void boot(@Observes ContainerInitialized ignored, BeanManager bm) {
         if (!customMainUsed)
             bm.fireEvent(new BootEvent());
     }

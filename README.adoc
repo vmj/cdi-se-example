@@ -1,8 +1,39 @@
 # Example Java SE + CDI 1.2 applications
 
 This repository contains one application based on *OpenWebBeans*, and another based on *Weld SE*.
+Those are CDI (think dependency injection) containers readily usable in a Java SE environment.
+For example, small apps or 12 factor apps.
 
-This is using *gradle* build system, but you do not need to install that in order to build this.
+## Why and What?
+
+Think what you will about the enterprise Java as a whole, some of their technologies are really neat.
+Also, since they are more and more usable without any heavy frameworks or boilerplate or configuration,
+they are a real contender in Java SE space.
+
+Dependency injection allows you to decouple the components of your app,
+so you don't need to spend any time thinking about constructing and wiring up your beans.
+CDI also takes care of lifecycle management of those components,
+so you get safe singletons without even thinking about multi-threading issues.
+CDI even has a neat event system.
+All this with next to no annotations or configuration.
+
+## How it works
+
+This project contains a `bean-archive`, which is just a JAR really,
+that contains CDI compatible beans, which are just POJOs really.
+This JAR forms the actual application.
+There's an `App` class that listens to a CDI event to start whatever the app does.
+
+Then there are two Java applications: `owb-app` and `weld-app`.
+Both are really small.
+All they do is, they use container specific way of constructing the CDI container and then fire the
+CDI event expected by the app in the `bean-archive`.
+
+That's it.  (See the source code for more comments.)
+
+## How to try it out
+
+I'm is using *gradle* build system, but you do not need to install that in order to build this.
 All you need is *Java SE JDK*, version 7 or newer.
 Both Oracle and OpenJDK should work.
 
@@ -11,14 +42,20 @@ Clone this repository:
   git clone https://github.com/vmj/cdi-se-example.git
   cd cdi-se-example
 
-After cloning this repository, build the apps as follows:
+Then build the apps by invoking the provided build script.
 
-  ./gradlew installDist # or, if on Windows, use the gradlew.bat batch file instead
+E.g. if you're on Linux or Unix or OSX, use:
 
-Don't worry, that will not install anything outside the source directory.
-The apps are installed into `{owb,weld}-app/build/install/{owb,weld}-app` directory.
+  ./gradlew installDist
 
-Now you can run the apps like this:
+Or, if you're on Windows, use:
+
+  gradlew.bat installDist
+
+Don't worry, those will not install anything outside the source directory.
+The apps are installed into `build/install` directories relative to the app source code.
+
+Hence, you can run the apps like this:
 
   owb-app/build/install/owb-app/bin/owb-app
   weld-app/build/install/weld-app/bin/weld-app
