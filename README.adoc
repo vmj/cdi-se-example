@@ -1,3 +1,5 @@
+image:https://travis-ci.org/vmj/cdi-se-example.svg?branch=master["Build Status", link="https://travis-ci.org/vmj/cdi-se-example"]
+
 # Example Java SE + CDI 1.2 applications
 
 This repository contains one application based on *OpenWebBeans*, and another based on *Weld SE*.
