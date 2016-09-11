@@ -1,5 +1,0 @@
-<!--
-    This file is needed IF you choose to boot your application via StartMain.main() method from Weld SE.
-    This is because Weld does not support implicit bean archives in Java SE, for some reason.
-    So you need to explicitly mark this JAR as a bean archive with this (effectively) empty beans.xml.
--->
