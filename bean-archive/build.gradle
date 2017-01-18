@@ -15,5 +15,5 @@ dependencies {
     // "AtInject"; also a dependency of above, but we're using it directly
     compile 'javax.inject:javax.inject:1'
 
-    compileOnly 'org.slf4j:slf4j-api:1.7.21'
+    compileOnly 'org.slf4j:slf4j-api:1.7.22'
 }
