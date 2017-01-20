@@ -21,18 +21,16 @@ import java.util.Iterator;
  * </p>
  * @see OwbSeContainerInitializer
  */
-public class OwbSeContainer implements SeContainer {
+class OwbSeContainer implements SeContainer {
     private boolean running = true;
 
-    public OwbSeContainer() {
-        final ContainerLifecycle service = WebBeansContext.currentInstance().getService(ContainerLifecycle.class);
-        service.startApplication(null);
+    OwbSeContainer() {
+        containerLifecycle().startApplication(null);
     }
 
     @Override
     public void close() {
-        final ContainerLifecycle service = WebBeansContext.currentInstance().getService(ContainerLifecycle.class);
-        service.stopApplication(null);
+        containerLifecycle().stopApplication(null);
         running = false;
     }
 
@@ -43,9 +41,16 @@ public class OwbSeContainer implements SeContainer {
 
     @Override
     public BeanManager getBeanManager() {
-        final ContainerLifecycle service = WebBeansContext.currentInstance().getService(ContainerLifecycle.class);
-        return service.getBeanManager();
+        return containerLifecycle().getBeanManager();
     }
+
+    private ContainerLifecycle containerLifecycle() {
+        return WebBeansContext.currentInstance().getService(ContainerLifecycle.class);
+    }
+
+    /*
+     * Rest of these methods are really implemented.
+     */
 
     @Override
     public Instance<Object> select(Annotation... qualifiers) {

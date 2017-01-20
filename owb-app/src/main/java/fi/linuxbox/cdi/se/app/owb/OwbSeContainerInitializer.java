@@ -7,8 +7,8 @@ import java.lang.annotation.Annotation;
 import java.util.Map;
 
 /**
- * OpenWebBeans does not support the CDI 2.0 {@link javax.enterprise.inject.se.SeContainerInitializer}
- * and {@link SeContainer} interfaces.
+ * OpenWebBeans does not support the CDI 2.0 {@link SeContainerInitializer} and {@link SeContainer}
+ * interfaces.
  * <p>
  *     This is a minimal implementation that works for a Hello World app.
  * </p>
@@ -20,6 +20,21 @@ import java.util.Map;
  * </p>
  */
 public class OwbSeContainerInitializer extends SeContainerInitializer {
+
+    /*
+     * This is the only method that is implemented here.
+     * @return
+     */
+    @Override
+    public SeContainer initialize() {
+        return new OwbSeContainer();
+    }
+
+    /*
+     * Rest of these methods just return this.
+     *
+     * I.e. this implementation does not support any configuration.
+     */
     @Override
     public SeContainerInitializer addBeanClasses(Class<?>[] classes) {
         return this;
@@ -93,10 +108,5 @@ public class OwbSeContainerInitializer extends SeContainerInitializer {
     @Override
     public SeContainerInitializer setClassLoader(ClassLoader classLoader) {
         return this;
-    }
-
-    @Override
-    public SeContainer initialize() {
-        return new OwbSeContainer();
     }
 }
