@@ -9,6 +9,7 @@ import javax.enterprise.event.*;
  *     after initializing the container.
  *     This event listener can already use injection (parameter injection in this case).
  * </p>
+ * @see MyService
  */
 public class App {
     public void onBootEvent(@Observes BootEvent ignored, MyService service) {

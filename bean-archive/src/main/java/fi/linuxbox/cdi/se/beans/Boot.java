@@ -14,7 +14,6 @@ import javax.enterprise.inject.se.SeContainerInitializer;
  *     When the <code>fireEvent</code> function returns, the container is closed
  *     and the application exits.
  * </p>
- * @see MyService
  */
 public class Boot {
     public static void main(final String[] args) {
