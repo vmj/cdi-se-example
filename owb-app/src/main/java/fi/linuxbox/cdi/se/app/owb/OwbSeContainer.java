@@ -49,7 +49,7 @@ class OwbSeContainer implements SeContainer {
     }
 
     /*
-     * Rest of these methods are really implemented.
+     * Rest of these methods aren't really implemented.
      */
 
     @Override
