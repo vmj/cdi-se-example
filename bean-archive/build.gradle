@@ -10,8 +10,8 @@ repositories {
 }
 
 dependencies {
-    // CDI 1.2 (JSR-346?): javax.enterprise.{context{,.spi},event,inject{,.spi},util)
-    compile 'javax.enterprise:cdi-api:1.2'
+    // CDI 2.0 (JSR-365)
+    compile 'javax.enterprise:cdi-api:2.0.Beta1'
     // "AtInject"; also a dependency of above, but we're using it directly
     compile 'javax.inject:javax.inject:1'
 

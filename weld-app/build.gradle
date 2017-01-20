@@ -4,9 +4,7 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'application'
 
-// To boot the app via Weld event, uncomment following line and comment out the next after that.
-//mainClassName = 'org.jboss.weld.environment.se.StartMain'
-mainClassName = 'fi.linuxbox.cdi.se.app.weld.Boot'
+mainClassName = 'fi.linuxbox.cdi.se.beans.Boot'
 
 sourceCompatibility = 1.7
 
@@ -17,12 +15,12 @@ repositories {
 dependencies {
     compile project(':bean-archive')
 
-    compile 'org.jboss.weld.se:weld-se-core:2.4.1.Final'
+    compile 'org.jboss.weld.se:weld-se-core:3.0.0.Beta1'
 
     // Weld supports the use of Jandex bytecode scanning library to speed up the scanning process.
     // In this app, it didn't make much of a difference.  Anyway, it's optional and has to be put to classpath if
     // you want to use it.
-    compile 'org.jboss:jandex:2.0.3.Final'
+    //compile 'org.jboss:jandex:2.0.3.Final'
 
     compile 'org.slf4j:slf4j-api:1.7.22'
     runtime 'ch.qos.logback:logback-classic:1.1.8'
