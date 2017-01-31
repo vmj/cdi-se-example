@@ -15,7 +15,7 @@ repositories {
 dependencies {
     compile project(':bean-archive')
 
-    compile 'org.jboss.weld.se:weld-se-core:3.0.0.Beta1'
+    compile 'org.jboss.weld.se:weld-se-core:3.0.0.CR1'
 
     // Weld supports the use of Jandex bytecode scanning library to speed up the scanning process.
     // In this app, it didn't make much of a difference.  Anyway, it's optional and has to be put to classpath if
