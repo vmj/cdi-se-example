@@ -1,7 +1,6 @@
 language: java
 # sudo, dist, and group are required for oraclejdk9.
 # Remove them as soon as container infra has java9 support.
-# Also, see gradlew.java9
 sudo: required
 dist: trusty
 group: edge
