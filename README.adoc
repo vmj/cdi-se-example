@@ -1,6 +1,6 @@
 image:https://travis-ci.org/vmj/cdi-se-example.svg?branch=master["Build Status", link="https://travis-ci.org/vmj/cdi-se-example"]
 
-# Example Java SE + CDI 2.0 (Beta1) applications
+# Example Java SE + CDI 2.0 applications
 
 This repository contains one application based on *OpenWebBeans*, and another based on *Weld SE*.
 Those are CDI (think dependency injection) containers readily usable in a Java SE environment.
@@ -13,7 +13,7 @@ Also, since they are more and more usable without any heavy frameworks or boiler
 they are a real contender in Java SE space.
 
 Dependency injection allows you to decouple the components of your app,
-so you don't need to spend any time thinking about constructing and wiring up your beans.
+so you don't need to spend any time thinking about constructing and wiring them up.
 CDI also takes care of lifecycle management of those components,
 so you get safe singletons without even thinking about multi-threading issues.
 CDI even has a neat event system.
