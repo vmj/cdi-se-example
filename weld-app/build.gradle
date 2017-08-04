@@ -13,15 +13,15 @@ repositories {
 }
 
 dependencies {
-    runtime project(':bean-archive')
+    runtimeOnly project(':bean-archive')
 
-    runtime 'org.jboss.weld.se:weld-se-core:3.0.0.Final'
+    runtimeOnly 'org.jboss.weld.se:weld-se-core:3.0.0.Final'
 
     // Weld supports the use of Jandex bytecode scanning library to speed up the scanning process.
     // In this app, it didn't make much of a difference.  Anyway, it's optional and has to be put to classpath if
     // you want to use it.
-    //runtime 'org.jboss:jandex:2.0.3.Final'
+    //runtimeOnly 'org.jboss:jandex:2.0.3.Final'
 
-    runtime 'org.slf4j:slf4j-api:1.7.25'
-    runtime 'ch.qos.logback:logback-classic:1.2.3'
+    runtimeOnly 'org.slf4j:slf4j-api:1.7.25'
+    runtimeOnly 'ch.qos.logback:logback-classic:1.2.3'
 }

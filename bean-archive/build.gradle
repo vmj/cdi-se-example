@@ -1,7 +1,7 @@
 group 'fi.linuxbox.cdi.se'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
+apply plugin: 'java-library'
 
 sourceCompatibility = 1.8
 
@@ -11,9 +11,9 @@ repositories {
 
 dependencies {
     // CDI 2.0 (JSR-365)
-    compile 'javax.enterprise:cdi-api:2.0'
+    implementation 'javax.enterprise:cdi-api:2.0'
     // "AtInject"; also a dependency of above, but we're using it directly
-    compile 'javax.inject:javax.inject:1'
+    implementation 'javax.inject:javax.inject:1'
 
     compileOnly 'org.slf4j:slf4j-api:1.7.25'
 }
