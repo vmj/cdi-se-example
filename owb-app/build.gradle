@@ -13,16 +13,16 @@ repositories {
 }
 
 dependencies {
-    compile project(':bean-archive')
+    runtime project(':bean-archive')
 
-    compile 'org.apache.openwebbeans:openwebbeans-se:2.0.0'
+    runtime 'org.apache.openwebbeans:openwebbeans-se:2.0.0'
     // nothing gets deployed without this (weld has it, too, and we get it
     // transitively)
-    compile 'javax.annotation:javax.annotation-api:1.3'
+    runtime 'javax.annotation:javax.annotation-api:1.3'
 
     // OpenWebBeans is pretty fast to start, at least in this app, but even faster with a
     // optimized META-INF/openwebbeans/openwebbeans.properties.
 
-    compile 'org.slf4j:slf4j-api:1.7.25'
+    runtime 'org.slf4j:slf4j-api:1.7.25'
     runtime 'ch.qos.logback:logback-classic:1.2.3'
 }
