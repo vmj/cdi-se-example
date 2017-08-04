@@ -17,9 +17,14 @@ import javax.enterprise.inject.se.SeContainerInitializer;
  */
 public class Boot {
     public static void main(final String[] args) {
-        // newInstance() looks up a META-INF service that implements the SeContainerInitializer
-        // interface and loads that.  There can only be one.
-        SeContainer seContainer = SeContainerInitializer.newInstance().initialize();
+        // newInstance() looks up a META-INF service that implements the
+        // SeContainerInitializer interface and loads that.
+        // There can only be one.
+        SeContainer seContainer = SeContainerInitializer.newInstance()
+                // OWB needs the package.  For Weld, this is optional.
+                .addPackages(App.class.getPackage())
+                .initialize();
+
 
         // Fire synchronous event that triggers the code in App class.
         seContainer.getBeanManager().fireEvent(new BootEvent());
