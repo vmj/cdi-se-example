@@ -6,7 +6,7 @@ apply plugin: 'application'
 
 mainClassName = 'fi.linuxbox.cdi.se.beans.Boot'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
