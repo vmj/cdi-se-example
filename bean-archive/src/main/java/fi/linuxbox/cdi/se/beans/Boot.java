@@ -21,8 +21,15 @@ public class Boot {
         // SeContainerInitializer interface and loads that.
         // There can only be one.
         SeContainer seContainer = SeContainerInitializer.newInstance()
-                // OWB needs the package.  For Weld, this is optional.
-                .addPackages(App.class.getPackage())
+                // OWB doesn't seem to find the beans.xml.
+                // By adding the fi.linuxbox.cdi.se.beans package to a
+                // synthetic bean archive, OWB finds all the beans, too.
+                .addPackages(BootEvent.class.getPackage())
+                // But then either discovery needs to be disabled,
+                // or the beans.xml needs to be removed.
+                // Otherwise WELD will find all the beans twice,
+                // leading to ambiguous injection points.
+                //.disableDiscovery()
                 .initialize();
 
 
