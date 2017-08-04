@@ -4,13 +4,6 @@ language: java
 sudo: required
 dist: trusty
 group: edge
-# Environment variables are for Java9.
-# But they need to work on Java 8, too.
-# Hence the IgnoreUnrecognizedVMOptions
-env:
-  global:
-    - JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED'
-    - GRADLE_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED'
 jdk:
   - oraclejdk8
   - oraclejdk9

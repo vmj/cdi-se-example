@@ -41,38 +41,25 @@ That's it.  (See the source code for more comments.)
 ## How to try it out
 
 I'm using *gradle* build system, but you do not need to install that in order to build this.
-All you need is *Java SE JDK*, version 9 or newer. (Java 8 requirement is in CDI spec.)
+All you need is *Java SE JDK*, version 8 or 9. (Java 8 requirement is in CDI spec.)
 
 Clone this repository:
 
   git clone https://github.com/vmj/cdi-se-example.git
   cd cdi-se-example
 
-Then build the apps by invoking the provided build script.
-E.g. if you're on Linux or Unix or OSX, use:
+Then run the OpenWebBeans based app:
 
-  ./gradlew installDist
+  ./gradlew owb-app:run
 
-Or, if you're on Windows, use:
+And the Weld based app:
 
-  gradlew.bat installDist
+  ./gradlew weld-app:run
 
-Don't worry, those will not install anything outside the source directory.
-The apps are installed into `build/install` directories relative to the app source code.
-
-Hence, you can run the apps like this:
-
-  owb-app/build/install/owb-app/bin/owb-app
-  weld-app/build/install/weld-app/bin/weld-app
+If you're on Windows, use the `gradlew.bat` script instead of `./gradlew`.
 
 You can clean up, too
 
   ./gradlew clean
 
-
-### PS. Note about Java 9 (EA)
-
-At the time of this writing, Gradle needs a couple of environment variables in order to run on Java 9:
-
-  export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED'
-  export GRADLE_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED'
+Have fun!
