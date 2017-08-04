@@ -3,7 +3,7 @@ image:https://travis-ci.org/vmj/cdi-se-example.svg?branch=master["Build Status",
 # Example Java SE + CDI 2.0 applications
 
 This repository contains one application based on *OpenWebBeans*, and another based on *Weld SE*.
-Those are CDI (think dependency injection) containers readily usable in a Java SE environment.
+Those are CDI containers (think dependency injection) readily usable in a Java SE environment.
 For example, small apps or 12 factor apps.
 
 ## Why and What?
@@ -29,11 +29,8 @@ and a `Boot` class that contains the standard Java `main` function.
 
 Then there are two Java applications: `owb-app` and `weld-app`.
 Both are really small.
-The `weld-app` does not even contain any code,
+They don't even contain any code;
 just a build file that instructs the build tool to compose a Java application.
-The `owb-app` has a little bit of glue code due to the fact that, at the time of writing,
-OpenWebBeans did not yet support the CDI 2.0 way of bootstrapping the CDI container
-(i.e. I implemented that myself).
 
 Both applications use the `Boot` class from the `bean-archive` to bootstrap the application.
 All it does is, it uses CDI 2.0 way of constructing the CDI container and then fires the
@@ -44,8 +41,7 @@ That's it.  (See the source code for more comments.)
 ## How to try it out
 
 I'm using *gradle* build system, but you do not need to install that in order to build this.
-All you need is *Java SE JDK*, version 7 or newer.
-Both Oracle and OpenJDK should work.
+All you need is *Java SE JDK*, version 9 or newer. (Java 8 requirement is in CDI spec.)
 
 Clone this repository:
 
@@ -53,7 +49,6 @@ Clone this repository:
   cd cdi-se-example
 
 Then build the apps by invoking the provided build script.
-
 E.g. if you're on Linux or Unix or OSX, use:
 
   ./gradlew installDist
