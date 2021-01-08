@@ -41,7 +41,7 @@ That's it.  (See the source code for more comments.)
 ## How to try it out
 
 I'm using *gradle* build system, but you do not need to install that in order to build this.
-All you need is *Java SE JDK*, version 8 or 9. (Java 8 requirement is in CDI spec.)
+All you need is *Java SE JDK*, version 8 or newer. (Java 8 requirement is in CDI spec; tested with JDK 15)
 
 Clone this repository:
 
