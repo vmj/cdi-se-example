@@ -62,4 +62,4 @@ You can clean up, too
 
   ./gradlew clean
 
-Have fun!
+Have fun!  (And see a bit more interesting example: https://github.com/vmj/swing-cdi-example)
